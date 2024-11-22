@@ -1,0 +1,120 @@
+Implemente uma API REST utilizando Node.js e Express. A API deve gerenciar dois recursos:
+
+Usuários (users)
+Produtos (products)
+
+Cada recurso deve ter 5 endpoints, totalizando 10 endpoints na API.
+
+A API deve simular o banco de dados usando listas em memória. Os dados inseridos ou atualizados devem ser armazenados na lista correspondente enquanto o servidor estiver em execução.
+
+Requisitos:
+Endpoints para Usuários (/users)
+Para as requisições que passam o id do usuário por parâmetro, caso o usuário não exista, deve retornar uma mensagem informado que o usuário não foi encontrado. Ex: { message: "Usuário não encontrado" }
+
+GET /users:
+Descrição: Busca todos os usuários cadastrados. 
+Entrada:
+Resposta:  [{ "id": "Codigo", "name": "Nome", "cpf": "cpf", "email": "email" }]
+GET /users/:id:
+Descrição: Busca o usuário por ID. 
+Entrada:
+Resposta: [{ "id": "Codigo", "name": "Nome", "cpf": "cpf", "email": "email" }]
+DELETE /users/:id:
+Descrição: Remover o usuário por ID 
+Entrada:
+Resposta: { message: "Usuário removido com sucesso" }.
+Validações de usuários: 
+
+
+
+
+
+POST /users:
+Descrição: Cria um usuário.
+Entrada: { "name": "Nome", "cpf": "cpf", "email": "email" }.
+Resposta:  { message: "Usuário cadastrado com sucesso" }.
+PUT /users/:id:
+Descrição: Atualizar o usuário por ID. 
+Entrada: { "id": "Codigo", "name": "Nome", "cpf": "cpf", "email": "email" }.
+Resposta: { message: "Usuário atualizado com sucesso" }.
+
+
+Nome:
+Validação: mínimo 3 caracteres.
+Mensagem: "'Nome' deve conter no mínimo 3 caracteres"
+Validação: máximo 150 caracteres
+Mensagem: "'Nome' deve conter no máximo 150 caracteres"
+Cpf:
+Validação: conter 11 caracteres.
+Mensagem: "'Cpf' deve conter 11 caracteres"
+Validação: Só aceita números
+Mensagem: "'Cpf' deve conter apenas números"
+Email:
+Validação: mínimo 3 caracteres.
+Mensagem: "'Email' deve conter no mínimo 3 caracteres"
+Validação: máximo 100 caracteres
+Mensagem: "'Email' deve conter no máximo 100 caracteres"
+Validação: conter @
+Mensagem: "'Email' deve conter '@'"
+Validação: conter '.' após
+Mensagem: "'Email' deve conter '.' após o '@'"
+Código:
+Validação: maior que 0
+Mensagem: "'Código deve ser maior que 0'"
+Endpoints para Produtos (/products)
+Para as requisições que passam o id do usuário por parâmetro, caso o usuário não exista, deve retornar uma mensagem informado que o usuário não foi encontrado. Ex: { message: "Produto não encontrado" }
+
+GET /products:
+Descrição: Busca todos os produtos cadastrados. 
+Entrada:
+Resposta:  [{ "id": "Codigo", "name": "Nome", "price": 0.0 }].
+GET /products/:id:
+Descrição: Busca o produto por ID. 
+Entrada:
+Resposta: { "id": "Codigo", "name": "Nome", "price": 0.0 }.
+
+
+
+POST /products:
+Descrição: Criar um produto
+Entrada: { "name": "Nome", "price": 0.0 }
+Resposta:  { message: "Produto cadastrado com sucesso" }.
+
+PUT /products/:id:
+Descrição: Atualizar o produto por ID.
+Entrada: { "id": "Codigo", "name": "Nome", "price": 0.0 }
+Resposta:  { message: "Produto atualizado com sucesso" }.
+DELETE /products/:id:
+Descrição: Remover o produto por ID.
+Entrada:
+Resposta:  { message: "Produto removido com sucesso" }. 
+Validações de produtos:
+
+Nome:
+Validação: mínimo 3 caracteres.
+Mensagem: "'Nome' deve conter no mínimo 3 caracteres"
+Validação: máximo 100 caracteres
+Mensagem: "'Nome' deve conter no máximo 100 caracteres"
+Preço:
+Validação: maior que 0
+Mensagem: "'Preço deve ser maior que 0'"
+Código:
+Validação: maior que 0
+Mensagem: "'Código deve ser maior que 0'"
+Regras e Dicas:
+Utilize arrays para armazenar os usuários e produtos. Por exemplo:
+let users = [];
+let products = [];
+Cada novo recurso inserido deve receber um id único gerado automaticamente.
+Utilize a biblioteca Express para gerenciar as rotas e lidar com as requisições.
+Valide os dados recebidos no corpo das requisições.
+Retorne mensagens claras e códigos de status HTTP apropriados para cada operação.
+Entrega:
+Deve ser entregue o link do github e o código deve ser funcional e bem estruturado, e todos os endpoints devem estar testados e funcionando corretamente.
+
+Avaliação:
+Será avaliado funcionalidade da API como um todo.
+
+Está respondendo com os códigos de estatus correto: 200, 404...
+Está retornando mensagem avisando que o recurso em questão não existe, caso necessário.
+Texto de resposta Questão 4
