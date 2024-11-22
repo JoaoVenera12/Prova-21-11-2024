@@ -7,7 +7,7 @@ let products = [];
 
 /////////////////////////////////////////////
 // Usuarios
-cria();
+//cria(); // função usada no desenvolvimento para a criação de usuarios e produtos 
 
 
 app.get('/users', (req, res) => {
@@ -39,39 +39,13 @@ app.delete('/users/:id', (req, res) => {
     
 });
 
+// Tentativa fracassada de um post 
+// app.post('/users', (req, res) => {
+//     req.accepts('application/json');
+//     console.log(req.res);
+    
 
-app.post('/users', (req, res) => {
-    const { name, cpf, email } = req.body;
-    console.log(nome)
-});
-
-
-
-// let headersList = {
-//     "Accept": "*/*",
-//     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-//     "Content-Type": "application/json"
-//    }
-   
-//    let bodyContent = JSON.stringify({
-//      "id": "47",
-//      "name": "Nome",
-//      "cpf": "cpf",
-//      "email": "email"
-//    });
-   
-//    let response = await fetch("http://localhost:3000/users", { 
-//      method: "POST",
-//      body: bodyContent,
-//      headers: headersList
-//    });
-   
-//    let data = await response.text();
-//    console.log(data);
-   
-
-
-
+// });
 
 //Rota post /users
 //Rota put /users
@@ -127,6 +101,7 @@ function verificaNome(nome){
         }
     }
 }
+
 
 function cria(){
     users.push({ "id": users.length+1,"name": "Nome", "cpf": "cpf", "email": "email" })
